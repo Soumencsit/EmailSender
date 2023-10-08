@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SendIt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- onsubmit="SendEmail(); reset(); return false" -->
+        
+            <form onsubmit="SendEmail(); reset(); return false">
+                <h3>Email Sender</h3>
+                
+                
+                <!-- <label for="name">Enter Name</label> -->
+                <input type="text" id="name"  placeholder="Your Name">
+
+                <input name="email" id="Email" type="email"  placeholder="Mail Id"/>
+                <input type="tel" name="" id="phonenumber" placeholder="Phone Number">
+                
+                <textarea name="" id="textarea"   placeholder="Enter Your Massage"style="resize: none; overflow-y: scroll; "></textarea>
+                
+                <input type="submit" id="submitbtn">
+            </form>
+
+
+            <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+            <script>
+
+                    
+                    
+
+
+
+                    
+                    function SendEmail(){
+                                Email.send({
+                                Host : "smtp.elasticemail.com",
+                                Username : "palsoumen544@gmail.com",
+                                Password : '599F8990E25CE827E503AE95B4A4C8DE13F3',
+                                To : document.getElementById('Email').value,
+                                From : 'palsoumen544@gmail.com',
+                                Subject : document.getElementById('name').value,
+                                Body : document.getElementById('textarea').value
+                                }).then(
+                                message => alert(message)
+                                );
+                            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             
+
+             
+
+
+
+            </script>
+
+
+    </div>
+    
+</body>
+</html>
